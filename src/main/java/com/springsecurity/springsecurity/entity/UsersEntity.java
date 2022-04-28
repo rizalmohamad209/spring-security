@@ -13,6 +13,7 @@ public class UsersEntity {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    @Column(length = 255, unique = true,nullable = false)
     private String username;
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
