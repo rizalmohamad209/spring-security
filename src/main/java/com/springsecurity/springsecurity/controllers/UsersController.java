@@ -40,17 +40,17 @@ public class UsersController {
         return  ResponseEntity.created(uri).body(usersServices.post(body));
     }
 
-    @PostMapping("/role/addtouser")
-    public ResponseEntity<?>PostRoleToUser(@RequestBody RoleToUserForm form) throws ResourceNotFoundException{
-        usersServices.addRoleToUser(form.getUsername(),form.getRoleName());
-        return ResponseEntity.ok().build();
-    }
-
     @GetMapping("/role")
     public ResponseEntity<List<RoleEntity>> Get(){
         return ResponseEntity.ok().body(usersServices.getAllRole());
     }
 
+
+    @PostMapping("/role/addtouser")
+    public ResponseEntity<?>PostRoleToUser(@RequestBody RoleToUserForm form) throws ResourceNotFoundException{
+        usersServices.addRoleToUser(form.getUsername(),form.getRoleName());
+        return ResponseEntity.ok().build();
+    }
 
 
 
